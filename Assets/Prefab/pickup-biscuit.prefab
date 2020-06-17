@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7155835975474060410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7014467358581863611}
+  m_Layer: 0
+  m_Name: pickup-biscuit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7014467358581863611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7155835975474060410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.59, y: 0.16, z: -10.001465}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6993283370362215325}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8699321097068349860
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7014467358581863611}
+    m_Modifications:
+    - target: {fileID: 232333465, guid: 7303282996058a6499ac121fa0f70674, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ac1dc36c7d877e64fa2ba2c7e166fe20, type: 2}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.010000229
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.030000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.714355
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852967767628845627, guid: 7303282996058a6499ac121fa0f70674,
+        type: 3}
+      propertyPath: m_Name
+      value: biscuit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7303282996058a6499ac121fa0f70674, type: 3}
+--- !u!4 &6993283370362215325 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1852967767628845625, guid: 7303282996058a6499ac121fa0f70674,
+    type: 3}
+  m_PrefabInstance: {fileID: 8699321097068349860}
+  m_PrefabAsset: {fileID: 0}

@@ -11,7 +11,13 @@ public class EnemyAI : MonoBehaviour
     public AudioClip DeathSound;
 
     protected Transform m_currentWaypoint;
-    
+    public SpriteRenderer SpriteRenderer;
+    public Animator Animator;
+
+    protected bool m_isShrinking;
+    public Vector3 ShrinkSize;
+    public float ScaleLimit;
+
     protected void MoveTo(Transform Waypoint)
     {
         transform.position = Vector3.MoveTowards(transform.position, Waypoint.position, Time.deltaTime * Speed);
@@ -19,6 +25,7 @@ public class EnemyAI : MonoBehaviour
         {
             // turn around
             m_currentWaypoint = m_currentWaypoint == WaypointA ? WaypointB : WaypointA;
+            SpriteRenderer.flipX = SpriteRenderer.flipX == true ? false : true;
         }
     }
 
@@ -40,6 +47,16 @@ public class EnemyAI : MonoBehaviour
     protected void OnUpdate()
     {
         MoveTo(m_currentWaypoint);
+
+        if (m_isShrinking)
+        {
+            // shrink logic
+            transform.localScale -= ShrinkSize;
+            if (transform.localScale.y < ScaleLimit)
+            {
+                DestroyEnemy();
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -47,7 +64,7 @@ public class EnemyAI : MonoBehaviour
         CheckCollision();
     }
 
-    private void CheckCollision()
+    protected void CheckCollision()
     {
         if (Manager.instance.Player.position.y > Head.position.y)
         {
@@ -65,6 +82,12 @@ public class EnemyAI : MonoBehaviour
     }
 
     protected void KillEnemy()
+    {
+        Manager.instance.AudioSource.PlayOneShot(DeathSound);
+        m_isShrinking = true;
+    }
+
+    public void DestroyEnemy()
     {
         Destroy(transform.parent.gameObject);
     }

@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [Range(0.1f, 1.0f)] [SerializeField] float MovementSpeed;
     [Range(0.0f, 0.5f)] [SerializeField] float JumpSpeed;
 
+    public float JumpResetTime;
+    public Rigidbody2D Rigidbody2D;
+
     void FixedUpdate()
     {
         if (m_MoveLeft)
@@ -44,9 +47,25 @@ public class Player : MonoBehaviour
         if (m_isGrounded)
         {
             // jump logic
+            Rigidbody2D.gravityScale = 0.0f;
+            CancelInvoke("ResetJump");
+            Invoke("ResetJump", JumpResetTime);
             m_isGrounded = false;
             m_Jump = true;
         }
+    }
+
+    public void ExtraJump()
+    {
+        CancelInvoke("ResetJump");
+        Rigidbody2D.gravityScale = 0.0f;
+        Rigidbody2D.velocity = Vector2.zero;
+        Invoke("ResetJump", JumpResetTime);
+    }
+
+    public void ResetJump()
+    {
+        Rigidbody2D.gravityScale = 1.0f;
     }
 
     void OnCollisionEnter2D(Collision2D col)
